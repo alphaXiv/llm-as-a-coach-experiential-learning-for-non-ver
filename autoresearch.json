@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2607.18110",
+  "title": "EL vs scalar-reward RL at 1.5B: a matched downscaled reproduction",
+  "description": "In 64 matched runs, scalar-reward GRPO outperformed experiential-learning distillation on held-out and OOD prompts (9 paired seeds, robust to LR and training length), while the paper's low-bandwidth prediction held: 3.3-bit quantized feedback produced no held-out gain.",
+  "verdict": "partially-reproduced",
+  "reportPath": "reports/el-vs-scalar-rl/report.md",
+  "notebookPath": "notebooks/reproduction.py",
+  "compute": {
+    "backend": "kubernetes",
+    "gpuModel": "NVIDIA RTX PRO 6000 Blackwell",
+    "gpuCount": 16,
+    "wallHours": 4.2
+  }
+}
