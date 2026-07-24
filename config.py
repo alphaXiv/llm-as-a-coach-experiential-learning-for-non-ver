@@ -1,6 +1,6 @@
 # Experiment configuration. Arms/seeds vary ONLY via child-branch edits here.
-ARM = "baseline"  # baseline | el | grpo | full_critique | rubrics_only | directive
-SEED = 0
+ARM = "el"
+SEED = 5
 
 POLICY_MODEL = "Qwen/Qwen2.5-1.5B-Instruct"
 COACH_MODEL = "Qwen/Qwen2.5-7B-Instruct"       # frozen train-time judge+coach (all arms)
