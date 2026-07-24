@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: coach-{{ORX_RUN}}
+spec:
+  activeDeadlineSeconds: 21600
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: run
+          image: vllm/vllm-openai:v0.9.2
+          command: ["bash", "-c", "$ORX_SCRIPT"]
+          resources:
+            requests:
+              nvidia.com/gpu: "1"
+              cpu: "14"
+              memory: "100Gi"
+            limits:
+              nvidia.com/gpu: "1"
+              memory: "110Gi"
+          volumeMounts:
+            - name: shm
+              mountPath: /dev/shm
+      volumes:
+        - name: shm
+          emptyDir:
+            medium: Memory
+            sizeLimit: 16Gi
