@@ -2,7 +2,7 @@
 
 [![Open in molab](https://marimo.io/molab-shield.svg)](https://molab.marimo.io/github/alphaXiv/llm-as-a-coach-experiential-learning-for-non-ver/blob/main/notebooks/reproduction.py)
 
-**Verdict: partially reproduced** (downscaled). The paper's central claim is that preserving a judge's *textual* feedback as transferable experience and distilling the experience-conditioned teacher distribution (Experiential Learning, EL) generalizes better than compressing the same feedback into a scalar reward optimized with GRPO. In a matched 64-run comparison at 1.5B scale on Kubernetes (1× NVIDIA RTX PRO 6000 Blackwell per run, peak 16 concurrent, ≈4.2 h total):
+**Verdict: partially reproduced** (downscaled). The paper's central claim is that preserving a judge's *textual* feedback as transferable experience and distilling the experience-conditioned teacher distribution (Experiential Learning, EL) generalizes better than compressing the same feedback into a scalar reward optimized with GRPO. In a matched 64-run comparison at 1.5B scale on Kubernetes (1× NVIDIA RTX PRO 6000 Blackwell per run, peak 16 concurrent, ≈4.1 h total):
 
 - **Headline EL > scalar-RL claim — this run did not show the reported effect.** Paper: EL 80.0 vs RL 79.2 (WildChat test score), 40.0% vs 37.3% (AlpacaEval win rate). Here: GRPO **beat** EL on held-out in-domain (win rate vs base 0.589 vs 0.524), AlpacaEval (0.598 vs 0.540), and Dolly creative writing (0.625 vs 0.601), paired over 9 seeds (t = 4.4 / 5.4 / 3.2), robust across a 5× LR sweep and 2× training length.
 - **Reward-hacking / generalization-decay claim — this run did not show the reported effect.** Doubling training doubled GRPO's train-score gain *and improved* its OOD win rates; EL stayed flat.
