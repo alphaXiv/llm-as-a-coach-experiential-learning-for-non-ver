@@ -1,5 +1,5 @@
 # Experiment configuration. Arms/seeds vary ONLY via child-branch edits here.
-ARM = "baseline"  # baseline | el | grpo | full_critique | rubrics_only | directive
+ARM = "el"
 SEED = 0
 
 POLICY_MODEL = "Qwen/Qwen2.5-1.5B-Instruct"
@@ -16,7 +16,7 @@ N_DOLLY = 64           # OOD: Dolly creative_writing subset
 PROMPTS_PER_STEP = 16
 SAMPLES_PER_PROMPT = 4
 TRAIN_STEPS = 64       # = 2 epochs over 512 prompts
-LR = 1e-5
+LR = 2e-5
 LORA_R = 32
 LORA_ALPHA = 64
 MICRO_BATCH = 8
