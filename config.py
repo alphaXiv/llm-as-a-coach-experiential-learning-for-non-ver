@@ -1,5 +1,5 @@
 # Experiment configuration. Arms/seeds vary ONLY via child-branch edits here.
-ARM = "baseline"  # baseline | el | grpo | full_critique | rubrics_only | directive
+ARM = "grpo"
 SEED = 0
 
 POLICY_MODEL = "Qwen/Qwen2.5-1.5B-Instruct"
